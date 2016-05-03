@@ -1,5 +1,9 @@
 == README
 
+This bike program will grab all the locations of bike stations and plot them on
+google maps. If a user clicks on a marker it will gather the 10 local restaurants from the
+Yelp API.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

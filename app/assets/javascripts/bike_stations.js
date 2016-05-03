@@ -1,9 +1,6 @@
 
     var map;
 
-    // var googleMapWidth = $("#mapId").css('width');
-    // var googleMapHeight = $("#mapId").css('height');
-
     function initMap() {
       map = new google.maps.Map(document.getElementById('mapId'), {
         center: {lat: 40.69847032728747, lng: -73.9514422416687},
@@ -13,3 +10,27 @@
     }
 
 $('#mapId').append('map');
+
+$(document).ready(function(){
+
+   $.ajax({ url: "https://gbfs.citibikenyc.com/gbfs/en/station_information.json",
+        method: 'GET'}).then(function(data){
+
+          var dataInformation = data.data
+
+          // call to controller to save all the data as ruby objects
+          $.ajax({
+            url: '/bike_stations',
+            method: 'POST',
+            data: dataInformation,
+            dataType: "json",
+            success: function(data){
+                //return after hitting controller
+                  debugger
+            }
+
+          })
+        });
+
+
+});
