@@ -24,13 +24,15 @@ class BikeStationsController < ApplicationController
 
     @allStations = BikeStation.all
 
-    parameters = {term: "restaurants", limit: 10, radius_filter: 100, latitude: 40.71911552 , longitude: -74.00666661}
-
-    yelpFeedback = render json: Yelp.client.search("New York", parameters)
-    #binding.pry
+    # parameters = {term: "restaurants", limit: 10, radius_filter: 100, latitude: 40.71911552 , longitude: -74.00666661}
+    #
+    # yelpFeedback = render json: Yelp.client.search("New York", parameters)
+    binding.pry
     @return = { :error => false, :response => "Added"}
-    render json: {allStations: @allStation}
-
+    render json: @allStations
+    # respond_to do |format|
+    #   format.json { render json: @allStation, :status => :ok}
+    # end
   end
 
 end
