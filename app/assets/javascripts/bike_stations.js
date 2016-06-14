@@ -28,6 +28,7 @@ $(document).ready(function(){
             dataType: "json",
             success: function(data){
                 //return after hitting controller
+                debugger;
           for(var i=0;  i < data.allStations.length; i++){
               new google.maps.Marker({
                 position: {lat: data.allStations[i]["location_lat"], lng: data.allStations[i]["location_lon"]},
