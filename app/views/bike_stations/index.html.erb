@@ -1,6 +1,7 @@
 <h1>All the CitiBike Stations in NYC</h1><br>
 
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
 <div id="mapId">
-  <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCkxdZWOTffO5_sWkE_D6xa9noADNibaMU&callback=initMap', async: Rails.env.production? %>
+  <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCkxdZWOTffO5_sWkE_D6xa9noADNibaMU&callback=initAutocomplete', async: Rails.env.production? %>
 
 </div>
